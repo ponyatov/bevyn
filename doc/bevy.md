@@ -22,7 +22,7 @@ struct Position {
 
 ### [[game/system|system]]
 
-just a normal Rust functions:
+- just a normal Rust functions:
 
 ```Rust
 fn print_position_system(query: Query<&Position>) {
@@ -32,6 +32,25 @@ fn print_position_system(query: Query<&Position>) {
 }
 ```
 
+- hello as system:
+
+```Rust
+fn hello_system() {
+    println!("Hello, world!");
+}
+
+fn main() {
+    App::new().add_systems(Update, hello_system).run();
+}
+```
+
+- startup system
+	- just like normal systems, but they run exactly once,
+	- before all other systems, right when our app starts
+```Rust
+
+```
+
 ### [[entity]]
 
 a simple type containing a unique integer: just some object marker
@@ -39,6 +58,8 @@ a simple type containing a unique integer: just some object marker
 ```Rust
 struct Entity(u64);
 ```
+
+### [[bevy/Commands]]
 
 # uses
 - [[glam]]

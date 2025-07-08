@@ -10,9 +10,27 @@ struct Position {
     y: f32,
 }
 
+#[derive(Component)]
+struct Person;
+
+#[derive(Component)]
+struct Name(String);
+
 fn print_position_system(query: Query<&Position>) {
     for position in &query {
         println!("position: {} {}", position.x, position.y);
+    }
+}
+
+fn add_people(mut commands: Commands) {
+    commands.spawn((Person, Name("Elaina Proctor".to_string())));
+    commands.spawn((Person, Name("Renzo Hume".to_string())));
+    commands.spawn((Person, Name("Zayna Nieves".to_string())));
+}
+
+fn greet_people(query: Query<&Name, With<Person>>) {
+    for name in &query {
+        println!("hello {}!", name.0);
     }
 }
 
@@ -23,5 +41,8 @@ fn hello_system() {
 struct Entity(u64);
 
 fn main() {
-    App::new().add_systems(Update, hello_system).run();
+    App::new()
+        .add_systems(Startup, add_people)
+        .add_systems(Update, (hello_system, greet_people))
+        .run();
 }
