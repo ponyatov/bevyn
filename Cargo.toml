@@ -1,0 +1,11 @@
+[package]
+name        =  "bevyn"
+version     =  "0.0.1"
+description =  "Rust Game Engine workout"
+authors     = ["Dmitry Ponyatov <dponyatov@gmail.com>"]
+license     =  "MIT"
+repository  =  "https://github.com/ponyatov/bevyn"
+edition     =  "2024"
+
+[dependencies]
+const_format = "0.2"
