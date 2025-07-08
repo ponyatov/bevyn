@@ -11,6 +11,12 @@ struct Position {
 }
 
 #[derive(Component)]
+struct Velocity {
+    dx: f32,
+    dy: f32,
+}
+
+#[derive(Component)]
 struct Person;
 
 #[derive(Component)]
