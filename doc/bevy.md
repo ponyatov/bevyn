@@ -1,6 +1,6 @@
 # `bevy`
-## refreshingly simple data-driven game engine
-#Rust 
+## simple data-driven game engine
+### in [[Rust/Rust|Rust]]
 
 https://github.com/ponyatov/bevyn
 
@@ -8,7 +8,8 @@ https://github.com/ponyatov/bevyn
 - https://crates.io/crates/bevy
 - https://www.youtube.com/watch?v=XWZBVC2AqsE with [[lyon]]
 
-## [[game/ECS|ECS]]
+## [[ECS]]
+
 # uses
 - [[glam]]
 - [[wgpu]]
