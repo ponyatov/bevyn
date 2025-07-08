@@ -10,6 +10,36 @@ https://github.com/ponyatov/bevyn
 
 ## [[ECS]]
 
+### [[game/component|component]]
+
+```Rust
+#[derive(Component)]
+struct Position {
+    x: f32,
+    y: f32,
+}
+```
+
+### [[game/system|system]]
+
+just a normal Rust functions:
+
+```Rust
+fn print_position_system(query: Query<&Position>) {
+    for position in &query {
+        println!("position: {} {}", position.x, position.y);
+    }
+}
+```
+
+### [[entity]]
+
+a simple type containing a unique integer: just some object marker
+
+```Rust
+struct Entity(u64);
+```
+
 # uses
 - [[glam]]
 - [[wgpu]]
